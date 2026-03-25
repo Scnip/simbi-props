@@ -160,3 +160,71 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
 }
+
+
+/* Scrolling digit counter animation */
+.number-digit-2 {
+  line-height: 1;
+  display: block;
+  height: auto;
+}
+
+.single-counter-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.summery-counter-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  overflow: hidden;
+}
+
+/* Trigger animation on scroll */
+.single-counter-wrap.animate-in {
+  animation: none;
+}
+
+/* Savings card animations */
+.single-saving-card-wrap {
+  transition: transform 300ms ease-out, box-shadow 300ms ease-out;
+}
+
+.single-saving-card-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* Saving card icon wrappers */
+.saving-card-icon-wrap-2 {
+  background-color: #d988ff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.saving-card-icon-wrap-2._1 {
+  background-color: #d988ff;
+}
+
+.saving-card-icon-wrap-2._2 {
+  background-color: #ffc966;
+}
+
+.saving-card-icon-wrap-2._3 {
+  background-color: #66d9ff;
+}
+
+.saving-card-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

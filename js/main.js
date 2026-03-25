@@ -120,7 +120,7 @@ class App {
       const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const current = Math.floor(start + (target - start) * progress);
-      element.textContent = current;
+      element.textContent = current.toLocaleString();
 
       if (progress < 1) {
         requestAnimationFrame(updateCounter);

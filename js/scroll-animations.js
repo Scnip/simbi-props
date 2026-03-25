@@ -72,6 +72,25 @@ class ScrollAnimations {
       this.observer.observe(el);
       this.animatedElements.set(el, 'hero');
     });
+
+    // Observe generic slide-up animations
+    const slideUpElements = document.querySelectorAll('[data-animate="slide-up"]:not([data-animate="slide-up"][class*="animate-"])');
+    slideUpElements.forEach((el, index) => {
+      if (!el.classList.contains('animate-slide-up')) {
+        el.classList.add('animate-slide-up', 'will-animate');
+        el.style.animationDelay = `${index * 100}ms`;
+        this.observer.observe(el);
+        this.animatedElements.set(el, 'slide-up');
+      }
+    });
+
+    // Observe scale-up animations
+    const scaleUpElements = document.querySelectorAll('[data-animate="scale-up"]');
+    scaleUpElements.forEach((el) => {
+      el.classList.add('animate-scale-up', 'will-animate');
+      this.observer.observe(el);
+      this.animatedElements.set(el, 'scale-up');
+    });
   }
 
   /**
@@ -80,12 +99,8 @@ class ScrollAnimations {
   handleIntersection(entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Element is entering viewport
+        // Element is entering viewport - add animate-in class to trigger animation
         entry.target.classList.add('animate-in');
-        // Stop observing after animation completes
-        setTimeout(() => {
-          this.observer.unobserve(entry.target);
-        }, 800);
       }
     });
   }
