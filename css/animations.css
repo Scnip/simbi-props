@@ -228,3 +228,10 @@
   height: 100%;
   object-fit: contain;
 }
+
+/* Getting Started Section */
+.helps-container {
+  max-width: 745px;
+  margin-left: auto;
+  margin-right: auto;
+}
