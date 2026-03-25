@@ -31,6 +31,11 @@ export default {
           800: '#1F2937',
           900: '#111827',
         },
+        card: {
+          purple: '#FAE6FF',
+          blue: '#E2FAFF',
+          orange: '#FFF6E4',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'Segoe UI', 'sans-serif'],

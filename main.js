@@ -52,17 +52,11 @@ class App {
     const prevBtn = document.querySelector('[data-slider-prev]');
     const nextBtn = document.querySelector('[data-slider-next]');
     const dots = document.querySelectorAll('[data-slider-dot]');
-    const totalSlides = 3;
-    let currentSlide = 0;
 
     const updateSlider = () => {
-      const slideWidth = 100 / 3;
-      const offset = (currentSlide % totalSlides) * slideWidth;
-      slider.style.transform = `translateX(-${offset}%)`;
-      
-      const activeDot = currentSlide % totalSlides;
+      slider.style.transform = `translateX(-${this.currentSlide * 100}%)`;
       dots.forEach((dot, index) => {
-        if (index === activeDot) {
+        if (index === this.currentSlide) {
           dot.classList.add('bg-primary-600');
           dot.classList.remove('bg-neutral-300');
         } else {
@@ -72,19 +66,19 @@ class App {
       });
     };
 
-    nextBtn?.addEventListener('click', () => {
-      currentSlide++;
+    prevBtn?.addEventListener('click', () => {
+      this.currentSlide = (this.currentSlide - 1 + dots.length) % dots.length;
       updateSlider();
     });
 
-    prevBtn?.addEventListener('click', () => {
-      currentSlide--;
+    nextBtn?.addEventListener('click', () => {
+      this.currentSlide = (this.currentSlide + 1) % dots.length;
       updateSlider();
     });
 
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
-        currentSlide = index;
+        this.currentSlide = index;
         updateSlider();
       });
     });
@@ -226,10 +220,6 @@ class App {
     
     if (!leftPhone || !rightPhone) return;
 
-    // Set transform-origin to top center so phones pivot from top
-    leftPhone.style.transformOrigin = 'top center';
-    rightPhone.style.transformOrigin = 'top center';
-
     let ticking = false;
 
     const updatePhoneAnimation = () => {
@@ -237,20 +227,22 @@ class App {
       if (!heroSection) return;
 
       const heroRect = heroSection.getBoundingClientRect();
-      const heroBottom = heroRect.bottom;
-      const viewportHeight = window.innerHeight;
+      const heroTop = heroRect.top;
+      const heroHeight = heroRect.height;
 
-      // Calculate scroll progress based on hero section bottom position
-      // 0 when hero bottom is at viewport bottom, 1 when hero is fully scrolled past
-      let progress = Math.max(0, (viewportHeight - heroBottom) / viewportHeight);
+      // Calculate scroll progress: 0 when hero is fully visible, 1 when scrolled past
+      let progress = Math.max(0, -heroTop / (heroHeight * 0.5));
       progress = Math.min(1, progress);
 
-      // Apply pinch effect: phones rotate inward from top, creating bottom lap effect
-      // Left phone rotates clockwise (positive), right phone rotates counter-clockwise (negative)
-      const rotateZ = progress * 15; // Rotate up to 15 degrees
+      // Apply pinch effect at BOTTOM: phones move inward from bottom
+      const translateX = progress * 40; // Move inward
+      const skewY = progress * 8; // Skew inward from bottom
+      const scaleY = 1 - progress * 0.1; // Slight vertical squeeze
 
-      leftPhone.style.transform = `rotateZ(${rotateZ}deg)`;
-      rightPhone.style.transform = `rotateZ(-${rotateZ}deg)`;
+      // Left phone: moves right and skews right
+      leftPhone.style.transform = `translateX(${translateX}px) skewY(${skewY}deg) scaleY(${scaleY})`;
+      // Right phone: moves left and skews left
+      rightPhone.style.transform = `translateX(-${translateX}px) skewY(-${skewY}deg) scaleY(${scaleY})`;
 
       ticking = false;
     };

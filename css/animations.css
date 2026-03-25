@@ -140,3 +140,12 @@
 
 /* Scroll-linked pinch animation for phone images */
 /* Handled via JavaScript scroll listener for smooth parallax effect */
+
+/* Ensure phone containers have no background */
+[data-scroll-close-image] {
+  background: transparent !important;
+}
+
+[data-scroll-close-image] img {
+  background: transparent !important;
+}

@@ -64,4 +64,16 @@
   .will-animate {
     will-change: transform, opacity;
   }
+
+  .transform-gpu {
+    @apply will-change-transform;
+  }
+
+  [data-scroll-close-image] {
+    @apply bg-transparent;
+  }
+
+  [data-scroll-close-image] img {
+    @apply bg-transparent;
+  }
 }
