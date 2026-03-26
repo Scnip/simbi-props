@@ -263,3 +263,25 @@
 .single-store-logo-wrap.long {
   height: 177px;
 }
+
+/* Floating Bubble Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-bubble {
+  animation: float 2s ease-in-out infinite;
+}
+
+.float-bubble-slow {
+  animation: float 3s ease-in-out infinite;
+}
+
+.float-bubble-slower {
+  animation: float 4s ease-in-out infinite;
+}
