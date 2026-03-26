@@ -285,3 +285,75 @@
 .float-bubble-slower {
   animation: float 4s ease-in-out infinite;
 }
+
+/* Directional Slide Animations */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.animate-slide-down {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+/* Animation In States */
+.animate-slide-up.animate-in {
+  animation: slideUp 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-down.animate-in {
+  animation: slideDown 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-left.animate-in {
+  animation: slideLeft 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-right.animate-in {
+  animation: slideRight 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Keyframe Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

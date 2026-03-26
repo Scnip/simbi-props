@@ -1,95 +1,70 @@
 /**
  * Scroll Animations Module
  * Handles Intersection Observer API for scroll-triggered animations
+ * 
+ * Usage:
+ * - data-animate="slide-up" - Slide up from bottom
+ * - data-animate="slide-down" - Slide down from top
+ * - data-animate="slide-left" - Slide left from right
+ * - data-animate="slide-right" - Slide right from left
+ * - data-animate="scale-up" - Scale up from center
+ * - data-animate="fade-in" - Fade in
+ * - data-animate="random" - Random direction animation
  */
 
 class ScrollAnimations {
   constructor() {
     this.observerOptions = {
       root: null,
-      rootMargin: '0px 0px -100px 0px',
+      rootMargin: '0px 0px -50px 0px',
       threshold: 0.1,
     };
     this.observer = new IntersectionObserver(
       this.handleIntersection.bind(this),
       this.observerOptions
     );
-    this.animatedElements = new Map();
+    this.animationTypes = ['slide-up', 'slide-down', 'slide-left', 'slide-right', 'scale-up', 'fade-in'];
+  }
+
+  /**
+   * Get random animation type
+   */
+  getRandomAnimation() {
+    return this.animationTypes[Math.floor(Math.random() * this.animationTypes.length)];
   }
 
   /**
    * Initialize scroll animations for all elements with animation classes
    */
   init() {
-    // Observe feature cards
-    const featureCards = document.querySelectorAll('[data-animate="slide-up"]');
-    featureCards.forEach((card, index) => {
-      card.classList.add('animate-slide-up', 'will-animate');
-      card.style.animationDelay = `${index * 100}ms`;
-      this.observer.observe(card);
-      this.animatedElements.set(card, 'slide-up');
-    });
-
-    // Observe testimonial cards
-    const testimonialCards = document.querySelectorAll('[data-animate="testimonial"]');
-    testimonialCards.forEach((card, index) => {
-      card.classList.add('animate-slide-up', 'will-animate');
-      card.style.animationDelay = `${index * 100}ms`;
-      this.observer.observe(card);
-      this.animatedElements.set(card, 'testimonial');
-    });
-
-    // Observe FAQ items
-    const faqItems = document.querySelectorAll('[data-animate="faq"]');
-    faqItems.forEach((item, index) => {
-      item.classList.add('animate-slide-up', 'will-animate');
-      item.style.animationDelay = `${index * 100}ms`;
-      this.observer.observe(item);
-      this.animatedElements.set(item, 'faq');
-    });
-
-    // Observe stat items
-    const statItems = document.querySelectorAll('[data-animate="stat"]');
-    statItems.forEach((item, index) => {
-      item.classList.add('animate-fade-in', 'will-animate');
-      item.style.animationDelay = `${index * 100}ms`;
-      this.observer.observe(item);
-      this.animatedElements.set(item, 'stat');
-    });
-
-    // Observe CTA section
-    const ctaSection = document.querySelector('[data-animate="cta"]');
-    if (ctaSection) {
-      ctaSection.classList.add('animate-scale-up', 'will-animate');
-      this.observer.observe(ctaSection);
-      this.animatedElements.set(ctaSection, 'cta');
-    }
-
-    // Observe hero section elements
-    const heroElements = document.querySelectorAll('[data-animate="hero"]');
-    heroElements.forEach((el) => {
-      el.classList.add('animate-fade-in', 'will-animate');
-      this.observer.observe(el);
-      this.animatedElements.set(el, 'hero');
-    });
-
-    // Observe generic slide-up animations
-    const slideUpElements = document.querySelectorAll('[data-animate="slide-up"]:not([data-animate="slide-up"][class*="animate-"])');
-    slideUpElements.forEach((el, index) => {
-      if (!el.classList.contains('animate-slide-up')) {
-        el.classList.add('animate-slide-up', 'will-animate');
-        el.style.animationDelay = `${index * 100}ms`;
-        this.observer.observe(el);
-        this.animatedElements.set(el, 'slide-up');
+    // Observe all elements with data-animate attribute
+    const allAnimatedElements = document.querySelectorAll('[data-animate]');
+    
+    allAnimatedElements.forEach((el) => {
+      let animationType = el.getAttribute('data-animate');
+      
+      // If random, pick a random animation
+      if (animationType === 'random') {
+        animationType = this.getRandomAnimation();
       }
-    });
-
-    // Observe scale-up animations
-    const scaleUpElements = document.querySelectorAll('[data-animate="scale-up"]');
-    scaleUpElements.forEach((el) => {
-      el.classList.add('animate-scale-up', 'will-animate');
+      
+      // Map animation types to CSS classes
+      const animationMap = {
+        'slide-up': 'animate-slide-up',
+        'slide-down': 'animate-slide-down',
+        'slide-left': 'animate-slide-left',
+        'slide-right': 'animate-slide-right',
+        'scale-up': 'animate-scale-up',
+        'fade-in': 'animate-fade-in',
+      };
+      
+      const animationClass = animationMap[animationType] || 'animate-slide-up';
+      
+      // Add animation class
+      el.classList.add(animationClass);
+      
+      // Observe element
       this.observer.observe(el);
-      this.animatedElements.set(el, 'scale-up');
     });
   }
 
@@ -110,7 +85,6 @@ class ScrollAnimations {
    */
   destroy() {
     this.observer.disconnect();
-    this.animatedElements.clear();
   }
 }
 
