@@ -250,7 +250,16 @@
 
 /* Store Logo Styling */
 .store-logo {
-  max-width: 60%;
+  max-width: 59.6%;
   vertical-align: middle;
   display: inline-block;
+}
+
+/* Store Logo Card Heights */
+.single-store-logo-wrap.small {
+  height: 151px;
+}
+
+.single-store-logo-wrap.long {
+  height: 177px;
 }
