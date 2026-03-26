@@ -247,3 +247,10 @@
   display: flex;
   overflow: hidden;
 }
+
+/* Store Logo Styling */
+.store-logo {
+  max-width: 60%;
+  vertical-align: middle;
+  display: inline-block;
+}
