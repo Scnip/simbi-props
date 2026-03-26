@@ -1,15 +1,9 @@
 /**
  * Scroll Animations Module
- * Handles Intersection Observer API for scroll-triggered animations
+ * Handles Intersection Observer API for scroll-triggered animations with Animate CSS
  * 
- * Usage:
- * - data-animate="slide-up" - Slide up from bottom
- * - data-animate="slide-down" - Slide down from top
- * - data-animate="slide-left" - Slide left from right
- * - data-animate="slide-right" - Slide right from left
- * - data-animate="scale-up" - Scale up from center
- * - data-animate="fade-in" - Fade in
- * - data-animate="random" - Random direction animation
+ * Re-triggers animations every time elements enter viewport
+ * Removes animation classes when elements leave viewport so they're ready to re-trigger
  */
 
 class ScrollAnimations {
@@ -23,59 +17,51 @@ class ScrollAnimations {
       this.handleIntersection.bind(this),
       this.observerOptions
     );
-    this.animationTypes = ['slide-up', 'slide-down', 'slide-left', 'slide-right', 'scale-up', 'fade-in'];
   }
 
   /**
-   * Get random animation type
-   */
-  getRandomAnimation() {
-    return this.animationTypes[Math.floor(Math.random() * this.animationTypes.length)];
-  }
-
-  /**
-   * Initialize scroll animations for all elements with animation classes
+   * Initialize scroll animations for all elements with Animate CSS classes
    */
   init() {
-    // Observe all elements with data-animate attribute
-    const allAnimatedElements = document.querySelectorAll('[data-animate]');
+    // Observe all elements with animate__animated class (Animate CSS)
+    const allAnimatedElements = document.querySelectorAll('.animate__animated');
     
     allAnimatedElements.forEach((el) => {
-      let animationType = el.getAttribute('data-animate');
-      
-      // If random, pick a random animation
-      if (animationType === 'random') {
-        animationType = this.getRandomAnimation();
-      }
-      
-      // Map animation types to CSS classes
-      const animationMap = {
-        'slide-up': 'animate-slide-up',
-        'slide-down': 'animate-slide-down',
-        'slide-left': 'animate-slide-left',
-        'slide-right': 'animate-slide-right',
-        'scale-up': 'animate-scale-up',
-        'fade-in': 'animate-fade-in',
-      };
-      
-      const animationClass = animationMap[animationType] || 'animate-slide-up';
-      
-      // Add animation class
-      el.classList.add(animationClass);
-      
-      // Observe element
       this.observer.observe(el);
     });
   }
 
   /**
    * Handle intersection observer callback
+   * Re-triggers animations when elements enter/leave viewport
    */
   handleIntersection(entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Element is entering viewport - add animate-in class to trigger animation
-        entry.target.classList.add('animate-in');
+        // Element is entering viewport - re-trigger animation
+        // Get all Animate CSS animation classes (e.g., animate__slideInUp, animate__zoomIn)
+        const animationClasses = Array.from(entry.target.classList).filter(
+          (cls) => cls.startsWith('animate__') && cls !== 'animate__animated'
+        );
+
+        if (animationClasses.length > 0) {
+          // Remove animation classes to reset
+          animationClasses.forEach((cls) => entry.target.classList.remove(cls));
+          
+          // Trigger reflow to restart animation
+          void entry.target.offsetWidth;
+          
+          // Re-add animation classes
+          animationClasses.forEach((cls) => entry.target.classList.add(cls));
+        }
+      } else {
+        // Element is leaving viewport - remove animation classes
+        // so they're ready to re-trigger when element re-enters
+        const animationClasses = Array.from(entry.target.classList).filter(
+          (cls) => cls.startsWith('animate__') && cls !== 'animate__animated'
+        );
+        
+        animationClasses.forEach((cls) => entry.target.classList.remove(cls));
       }
     });
   }
