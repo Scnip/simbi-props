@@ -134,30 +134,66 @@ class App {
    * Initialize FAQ accordion functionality
    */
   initFAQAccordion() {
-    const faqItems = document.querySelectorAll('[data-faq-item]');
+    // Support both old and new FAQ structures
+    const oldFaqItems = document.querySelectorAll('[data-faq-item]');
+    const newFaqItems = document.querySelectorAll('.single-faq-wrap-2');
 
-    faqItems.forEach((item) => {
+    // Handle old FAQ structure
+    oldFaqItems.forEach((item) => {
       const header = item.querySelector('[data-faq-header]');
       if (!header) return;
 
       header.addEventListener('click', () => {
-        this.toggleFAQItem(item, faqItems);
+        this.toggleFAQItem(item, oldFaqItems);
       });
 
-      // Keyboard support
       header.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          this.toggleFAQItem(item, faqItems);
+          this.toggleFAQItem(item, oldFaqItems);
+        }
+      });
+    });
+
+    // Handle new FAQ structure
+    newFaqItems.forEach((item) => {
+      const header = item.querySelector('.faq-question-wrap-2');
+      if (!header) return;
+
+      header.addEventListener('click', () => {
+        this.toggleNewFAQItem(item, newFaqItems);
+      });
+
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.toggleNewFAQItem(item, newFaqItems);
         }
       });
     });
   }
 
   /**
-   * Toggle FAQ item expanded state
+   * Toggle FAQ item expanded state (old structure)
    */
   toggleFAQItem(item, allItems) {
+    const isExpanded = item.classList.contains('expanded');
+
+    // Close all items
+    allItems.forEach((i) => {
+      i.classList.remove('expanded');
+    });
+
+    // Open clicked item if it wasn't expanded
+    if (!isExpanded) {
+      item.classList.add('expanded');
+    }
+  }
+
+  /**
+   * Toggle FAQ item expanded state (new structure)
+   */
+  toggleNewFAQItem(item, allItems) {
     const isExpanded = item.classList.contains('expanded');
 
     // Close all items

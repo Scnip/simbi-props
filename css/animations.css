@@ -676,3 +676,390 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+
+/* Blog Section Styling */
+.section.blog {
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+.section-title-wrapper {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title-wrap.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.875rem;
+  }
+}
+
+.blog-collection-list-wrapper {
+  margin-bottom: 40px;
+}
+
+.blog-collection {
+  width: 100%;
+}
+
+.blog-grid-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.blog-grid-wrap.home-page {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .blog-grid-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.single-blog-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 300ms ease-out;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.single-blog-wrap:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.blog-contents-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-img-wrap {
+  display: block;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: #f3f4f6;
+  text-decoration: none;
+}
+
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease-out;
+}
+
+.single-blog-wrap:hover .blog-img {
+  transform: scale(1.05);
+}
+
+.blog-details-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px;
+  gap: 12px;
+}
+
+.blog-info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.blog-cat-wrap {
+  flex: 1;
+}
+
+.blog-category {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #f3f4f6;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0;
+}
+
+.blog-date-wrap {
+  white-space: nowrap;
+}
+
+.blog-date {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.blog-post-title-wrap {
+  text-decoration: none;
+  display: block;
+}
+
+.blog-post-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.4;
+  transition: color 300ms ease-out;
+}
+
+.single-blog-wrap:hover .blog-post-title {
+  color: #7c3aed;
+}
+
+.blog-post-details {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.blog-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.primary-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 25px;
+  background-color: #7c3aed;
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 300ms ease-out;
+  border: 2px solid #7c3aed;
+}
+
+.primary-button:hover {
+  background-color: #6d28d9;
+  border-color: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(124, 58, 237, 0.3);
+}
+
+.primary-button-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary-button-flex.purple {
+  color: white;
+}
+
+.primary-button-text-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.primary-button-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .section.blog {
+    padding: 60px 16px;
+  }
+
+  .section-title-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .blog-details-wrap {
+    padding: 16px;
+  }
+
+  .blog-post-title {
+    font-size: 1.125rem;
+  }
+}
+
+
+/* CTA Section Styling */
+.section.cta {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-flex-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .cta-flex-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.split-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-title-wrapper.mb-60 {
+  margin-bottom: 40px;
+}
+
+.section-title-wrap.cta {
+  text-align: left;
+}
+
+.section-title-wrap.cta .section-title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section-title-wrap.cta .section-title {
+    font-size: 1.875rem;
+  }
+}
+
+.cta-details {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+}
+
+.cta-button-wrapper {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-button-wrapper .primary-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 300ms ease-out;
+  text-decoration: none;
+}
+
+.cta-button-wrapper .primary-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.primary-button-flex.gray-bordered {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.cta-btn-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.primary-button-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cta-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cta-mobile {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .section.cta {
+    padding: 60px 16px;
+  }
+
+  .cta-flex-wrap {
+    gap: 30px;
+  }
+
+  .section-title-wrap.cta .section-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-details {
+    font-size: 1rem;
+  }
+
+  .cta-button-wrapper {
+    gap: 12px;
+  }
+
+  .cta-button-wrapper .primary-button {
+    padding: 10px 16px;
+    font-size: 0.9375rem;
+  }
+
+  .cta-btn-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
