@@ -160,7 +160,9 @@ class App {
       const header = item.querySelector('.faq-question-wrap-2');
       if (!header) return;
 
-      header.addEventListener('click', () => {
+      header.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         this.toggleNewFAQItem(item, newFaqItems);
       });
 
