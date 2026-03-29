@@ -1102,6 +1102,12 @@
 }
 
 @media (max-width: 768px) {
+  .footer-top-wrap {
+  background-color: #000000;
+  border-radius: 0px;
+ padding: 51px 0px 86px 24px;
+  margin-bottom: 40px;
+}
   .footer-top-flex-wrap {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1282,7 +1288,7 @@
 
 @media (max-width: 768px) {
   .footer-wrapper {
-    padding: 40px 16px;
+    padding: 40px 0px;
   }
 
   .footer-top-flex-wrap {
@@ -1295,5 +1301,21 @@
 
   .footer-social-link-wrapper {
     padding-top: 16px;
+  }
+}
+
+/* Mobile Menu Styling */
+[data-mobile-menu] {
+  display: none !important;
+}
+
+[data-mobile-menu].active {
+  display: block !important;
+}
+
+/* Ensure mobile menu is hidden on desktop */
+@media (min-width: 768px) {
+  [data-mobile-menu] {
+    display: none !important;
   }
 }
