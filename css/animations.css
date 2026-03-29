@@ -911,7 +911,7 @@
 
 /* CTA Section Styling */
 .section.cta {
-  padding: 80px 20px;
+  padding: 0px 0px;
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -1075,8 +1075,8 @@
 /* Footer Styling */
 .footer-wrapper {
   background-color: #ffffff;
-  border-top: 1px solid #e5e7eb;
-  padding: 60px 20px;
+  
+  /* padding: 60px 20px; */
 }
 
 .container {
@@ -1257,19 +1257,20 @@
 }
 
 .footer-bottom-wrapper {
-  padding-top: 20px;
-  border-top: 1px solid #e5e7eb;
+  padding-top: 2px;
   text-align: center;
+  padding-bottom: 20px;
+  
 }
 
 .footer-copyright-text {
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: #000000;
   margin: 0;
 }
 
 .copyright-link {
-  color: #7c3aed;
+  color: #000000;
   text-decoration: none;
   transition: color 300ms ease-out;
 }
