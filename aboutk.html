@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Simbi Props - Modern property management platform for real estate professionals">
+  <title>About Simbi Props - Property Management Made Simple</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 bg-white z-50 border-b border-neutral-100">
+    <nav class="container-max section-padding py-4 md:py-5 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-lg">S</span>
+        </div>
+        <span class="text-lg font-bold text-neutral-900">Simbi</span>
+      </div>
+
+      <!-- Desktop Navigation - Center Links -->
+      <div class="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+        <a href="index.html#benefits" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">Benefits</a>
+        <a href="index.html#features" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">Features</a>
+        <a href="index.html#stats" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">Stats</a>
+        <a href="index.html#testimonials" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">Testimonials</a>
+        <a href="index.html#faq" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">FAQ</a>
+        <a href="about.html" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">About</a>
+      </div>
+
+      <!-- Right Side - CTA Buttons -->
+      <div class="hidden md:flex items-center gap-3 flex-shrink-0">
+        <button class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2">Sign In</button>
+        <button class="btn-primary text-sm px-6 py-2">Get Started</button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button 
+        data-mobile-menu-toggle 
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        class="md:hidden flex flex-col gap-1.5 p-2 hover:bg-neutral-100 rounded-lg transition-colors"
+      >
+        <span class="w-5 h-0.5 bg-neutral-900 transition-all"></span>
+        <span class="w-5 h-0.5 bg-neutral-900 transition-all"></span>
+        <span class="w-5 h-0.5 bg-neutral-900 transition-all"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      data-mobile-menu 
+      class="md:hidden hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-100 shadow-sm"
+    >
+      <div class="flex flex-col gap-2 p-4">
+        <a href="index.html#benefits" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-neutral-50">Benefits</a>
+        <a href="index.html#features" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-neutral-50">Features</a>
+        <a href="index.html#stats" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-neutral-50">Stats</a>
+        <a href="index.html#testimonials" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-neutral-50">Testimonials</a>
+        <a href="index.html#faq" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-neutral-50">FAQ</a>
+        <a href="about.html" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-neutral-50">About</a>
+        <div class="flex flex-col gap-2 pt-2 border-t border-neutral-100 mt-2">
+          <button class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-neutral-50">Sign In</button>
+          <button class="btn-primary text-sm w-full">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 lg:pb-24 bg-gradient-to-br from-primary-50 via-white to-neutral-50 relative overflow-hidden">
+      <div class="container-max section-padding pt-0 relative">
+        <!-- Floating Elements (Parallax) - Visible Background Elements -->
+        <div class="absolute inset-0 pointer-events-none overflow-visible">
+          <!-- Element 1 - Top Left -->
+          <div class="absolute -top-14 -left-0 md:top-10 md:left-20 w-16 h-16 md:w-24 md:h-24 float-bubble" data-parallax-element>
+            <img src="assets/images/top-left.png" alt="Floating element" class="w-full h-full object-contain" />
+          </div>
+          
+          <!-- Element 2 - Top Right -->
+          <div class="absolute -top-5 right-0 md:top-16 md:right-24 w-14 h-14 md:w-20 md:h-20 float-bubble-slow" data-parallax-element>
+            <img src="assets/images/top-right.png" alt="Floating element" class="w-full h-full object-contain" />
+          </div>
+          
+          <!-- Element 3 - Bottom Left -->
+          <div class="absolute bottom-32 left-2 md:top-[400px] md:left-[200px] w-20 h-20 md:w-28 md:h-28 float-bubble-slower" data-parallax-element>
+            <img src="assets/images/bottom-left.png" alt="Floating element" class="w-full h-full object-contain" />
+          </div>
+          
+          <!-- Element 4 - Bottom Right -->
+          <div class="absolute bottom-20 right-3 md:top-[400px] md:right-8 w-16 h-16 md:w-24 md:h-24 float-bubble" data-parallax-element>
+            <img src="assets/images/bottom right.png" alt="Floating element" class="w-full h-full object-contain" />
+          </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+          <h1 data-animate="hero" class="mb-6 md:mb-8 text-[2.8em] md:text-[6em]  font-black text-neutral-900">
+           About Simbi Props
+          </h1>
+          
+          <p data-animate="hero" class="mb-8 md:mb-10 text-lg md:text-xl text-neutral-700 max-w-2xl mx-auto">
+            Transforming property management with intelligent tools designed for modern real estate professionals.
+          </p>
+
+          <div data-animate="hero" class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="btn-primary text-base md:text-lg px-8 py-4">
+              Learn More
+            </button>
+            <button class="btn-secondary text-base md:text-lg px-8 py-4">
+              Contact Us
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Image Placeholder -->
+        <div class="mt-16 md:mt-20 lg:mt-24 relative z-10" style="perspective: 1200px;">
+          <div class="flex items-center justify-center gap-4 md:gap-8 lg:gap-12 perspective">
+            <!-- Left iPhone 15 Image -->
+            <div class="w-28 md:w-40 lg:w-48 transform-gpu bg-transparent" data-scroll-close-image="left">
+              <img 
+                src="assets/images/iphone-left.png" 
+                alt="Simbi Props Dashboard on iPhone" 
+                class="w-full h-auto shadow-2xl rounded-3xl bg-transparent"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Right iPhone 15 Image -->
+            <div class="w-28 md:w-40 lg:w-48 transform-gpu bg-transparent" data-scroll-close-image="right">
+              <img 
+                src="assets/images/iphone-right.png" 
+                alt="Simbi Props Analytics on iPhone" 
+                class="w-full h-auto shadow-2xl rounded-3xl bg-transparent"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="section-padding bg-white">
+      <div class="container-max">
+        <div class="max-w-3xl mx-auto">
+          <!-- Mission Section -->
+          <div class="mb-16 md:mb-20 animate__animated animate__slideInUp" data-animate="slide-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">Our Mission</h2>
+            <p class="text-lg text-neutral-700 mb-4">
+              At Simbi Props, we believe property management shouldn't be complicated. Our mission is to empower real estate professionals with intelligent tools that streamline operations, reduce administrative burden, and unlock new revenue opportunities.
+            </p>
+            <p class="text-lg text-neutral-700">
+              We're committed to building a platform that grows with your business, whether you're managing 10 properties or 1,000.
+            </p>
+          </div>
+
+          <!-- Values Section -->
+          <div class="mb-16 md:mb-20 animate__animated animate__slideInUp" data-animate="slide-up" style="animation-delay: 100ms;">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-8">Our Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Value 1 -->
+              <div class="bg-neutral-50 rounded-2xl p-8">
+                <h3 class="text-xl font-bold text-neutral-900 mb-3">Innovation</h3>
+                <p class="text-neutral-700">We continuously innovate to stay ahead of industry challenges and deliver cutting-edge solutions.</p>
+              </div>
+              <!-- Value 2 -->
+              <div class="bg-neutral-50 rounded-2xl p-8">
+                <h3 class="text-xl font-bold text-neutral-900 mb-3">Reliability</h3>
+                <p class="text-neutral-700">Your data and operations are critical. We build with security and uptime as top priorities.</p>
+              </div>
+              <!-- Value 3 -->
+              <div class="bg-neutral-50 rounded-2xl p-8">
+                <h3 class="text-xl font-bold text-neutral-900 mb-3">Customer Focus</h3>
+                <p class="text-neutral-700">Every feature we build is driven by real feedback from property managers like you.</p>
+              </div>
+              <!-- Value 4 -->
+              <div class="bg-neutral-50 rounded-2xl p-8">
+                <h3 class="text-xl font-bold text-neutral-900 mb-3">Transparency</h3>
+                <p class="text-neutral-700">We believe in open communication and honest partnerships with our customers.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Section -->
+          <div class="mb-16 md:mb-20 animate__animated animate__slideInUp" data-animate="slide-up" style="animation-delay: 200ms;">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">Our Team</h2>
+            <p class="text-lg text-neutral-700 mb-8">
+              Our team is composed of experienced real estate professionals, software engineers, and product designers who are passionate about solving the toughest challenges in property management.
+            </p>
+            <p class="text-lg text-neutral-700">
+              We work collaboratively to ensure every decision we make serves the best interests of our customers and the real estate industry.
+            </p>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="bg-gradient-to-r from-primary-50 to-primary-100 rounded-3xl p-12 text-center animate__animated animate__slideInUp" data-animate="slide-up" style="animation-delay: 300ms;">
+            <h2 class="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">Ready to Transform Your Property Management?</h2>
+            <p class="text-neutral-700 mb-8 max-w-2xl mx-auto">
+              Join hundreds of real estate professionals who are already using Simbi Props to streamline their operations and grow their business.
+            </p>
+            <button class="btn-primary text-base md:text-lg px-8 py-4">
+              Get Started Today
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="footer-wrapper">
+    <div class="container">
+      <div class="footer-top-wrap">
+        <div class="footer-top-container">
+          <div class="footer-top-flex-wrap">
+            <!-- Left Section - Logo & Details -->
+            <div class="footer-details-wrapper">
+              <div class="footer-logo-wrap">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <span class="text-black font-bold text-lg">S</span>
+                  </div>
+                  <span class="text-lg font-bold text-white">Simbi Props</span>
+                </div>
+              </div>
+              <p class="footer-details">Modern property management platform for real estate professionals.</p>
+            </div>
+
+            <!-- Right Section - Links & Social -->
+            <div class="footer-links-content-wrap">
+              <div class="footer-links-flex-wrapper">
+                <!-- Get Shoppoint Links -->
+                <div class="footer-links-single-row">
+                  <h6 class="footer-links-title">Product</h6>
+                  <div class="footer-links-flex">
+                    <a href="#" class="footer-link">Features</a>
+                    <a href="#" class="footer-link">Pricing</a>
+                    <a href="#" class="footer-link">Security</a>
+                  </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links-single-row">
+                  <h6 class="footer-links-title">Quick Links</h6>
+                  <div class="footer-links-flex">
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Simbi Props FAQ</a>
+                    <a href="#" class="footer-link">Blog</a>
+                  </div>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="footer-links-single-row">
+                  <h6 class="footer-links-title">Legal</h6>
+                  <div class="footer-links-flex">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Compliance</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="footer-social-link-wrapper">
+                <div class="footer-social-link-text">Connect on Social</div>
+                <div class="footer-social-links-flex">
+                  <a href="https://web.facebook.com/people/Shoppoint-Rewards/61577328725087" target="_blank" class="single-social-link">
+                    <span>f</span>
+                  </a>
+                  <a href="https://www.instagram.com/getshoppoint" target="_blank" class="single-social-link">
+                    <span>📷</span>
+                  </a>
+                  <a href="https://x.com/getshoppoint" target="_blank" class="single-social-link">
+                    <span>𝕏</span>
+                  </a>
+                  <a href="https://www.linkedin.com/company/getshoppoint" target="_blank" class="single-social-link">
+                    <span>in</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom-wrapper">
+        <div class="footer-copyright-text">© 2025 Copyright - <a href="#" class="copyright-link">Simbi Props</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
