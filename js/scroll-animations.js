@@ -26,7 +26,17 @@ class ScrollAnimations {
     // Observe all elements with animate__animated class (Animate CSS)
     const allAnimatedElements = document.querySelectorAll('.animate__animated');
     
-    allAnimatedElements.forEach((el) => {
+    console.log('🎬 ScrollAnimations initialized');
+    console.log(`📊 Found ${allAnimatedElements.length} animated elements`);
+    
+    if (allAnimatedElements.length === 0) {
+      console.warn('⚠️ No elements with .animate__animated class found!');
+      console.log('Available classes in DOM:', document.querySelectorAll('[class*="animate"]').length);
+    }
+    
+    allAnimatedElements.forEach((el, index) => {
+      const classes = Array.from(el.classList).filter(cls => cls.startsWith('animate__'));
+      console.log(`  [${index}] Classes: ${classes.join(', ')}`);
       this.observer.observe(el);
     });
   }
@@ -45,6 +55,8 @@ class ScrollAnimations {
         );
 
         if (animationClasses.length > 0) {
+          console.log(`✨ Triggering animation: ${animationClasses.join(', ')}`);
+          
           // Remove animation classes to reset
           animationClasses.forEach((cls) => entry.target.classList.remove(cls));
           
@@ -53,6 +65,8 @@ class ScrollAnimations {
           
           // Re-add animation classes
           animationClasses.forEach((cls) => entry.target.classList.add(cls));
+        } else {
+          console.warn('⚠️ Element has .animate__animated but no animation class');
         }
       } else {
         // Element is leaving viewport - remove animation classes

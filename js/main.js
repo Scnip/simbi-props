@@ -17,21 +17,14 @@ class App {
    * Initialize the application
    */
   init() {
-    this.initScrollAnimations();
+    console.log('🚀 App initializing...');
     this.initMobileMenu();
     this.initFAQAccordion();
     this.initSmoothScroll();
     this.initBenefitsSlider();
     this.initAnimatedCounters();
     this.initParallaxElements();
-  }
-
-  /**
-   * Initialize scroll animations
-   */
-  initScrollAnimations() {
-    this.scrollAnimations = new ScrollAnimations();
-    this.scrollAnimations.init();
+    console.log('✅ App initialized successfully');
   }
 
   /**
