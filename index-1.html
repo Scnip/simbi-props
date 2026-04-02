@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simbi Props - Modern property management platform for real estate professionals">
+  <title>Simbi Props - Property Management Made Simple</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 bg-white z-50 border-b border-neutral-100">
+    <nav class="w-full px-12 md:px-44 lg:px-56 py-4 md:py-5 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-lg">S</span>
+        </div>
+        <span class="text-lg font-bold text-neutral-900">Simbi Props</span>
+      </div>
+
+      <!-- Desktop Navigation - Center Links -->
+      <div class="hidden lg:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+        <a href="/" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">Home</a>
+        <a href="/about" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">About</a>
+        <a href="/faqs" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">FAQS</a>
+       
+      </div>
+
+      <!-- Right Side - CTA Buttons -->
+      <div class="hidden md:flex items-center gap-3 flex-shrink-0">
+        <button class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2">Sign In</button>
+        <button class="btn-primary text-sm px-6 py-2">Get Started</button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button 
+        data-mobile-menu-toggle 
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        class="md:hidden flex flex-col gap-1.5 p-2 hover:bg-neutral-100 rounded-lg transition-colors"
+      >
+        <span class="w-5 h-0.5 bg-neutral-900 transition-all"></span>
+        <span class="w-5 h-0.5 bg-neutral-900 transition-all"></span>
+        <span class="w-5 h-0.5 bg-neutral-900 transition-all"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      data-mobile-menu 
+      class="md:hidden hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-100 shadow-sm"
+    >
+      <div class="flex flex-col gap-2 p-4">
+        <a href="/" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">Home</a>
+        <a href="/about" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">About</a>
+        <a href="/faqs" data-nav-link class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors">FAQS</a>
+        <div class="flex flex-col gap-2 pt-2 border-t border-neutral-100 mt-2">
+          <button class="text-sm text-neutral-600 hover:text-neutral-900 font-medium transition-colors px-4 py-2 rounded-lg hover:bg-neutral-50">Sign In</button>
+          <button class="btn-primary text-sm w-full">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 lg:pb-24 bg-gradient-to-br from-primary-50 via-white to-neutral-50 relative overflow-hidden">
+      <div class="container-max section-padding pt-0 relative">
+        <!-- Floating Elements (Parallax) - Visible Background Elements -->
+        <div class="absolute inset-0 pointer-events-none overflow-visible">
+          <!-- Element 1 - Top Left -->
+          <div class="absolute -top-14 -left-0 md:top-10 md:left-20 w-16 h-16 md:w-24 md:h-24 float-bubble" data-parallax-element>
+            <img src="assets/images/top-left.png" alt="Floating element" class="w-full h-full object-contain" />
+          </div>
+          
+          <!-- Element 2 - Top Right -->
+          <div class="absolute -top-5 right-0 md:top-16 md:right-24 w-14 h-14 md:w-20 md:h-20 float-bubble-slow" data-parallax-element>
+            <img src="assets/images/top-right.png" alt="Floating element" class="w-full h-full object-contain" />
+          </div>
+          
+          <!-- Element 3 - Bottom Left -->
+          <div class="absolute bottom-32 left-2 md:top-[400px] md:left-[200px] w-20 h-20 md:w-28 md:h-28 float-bubble-slower" data-parallax-element>
+            <img src="assets/images/bottom-left.png" alt="Floating element" class="w-full h-full object-contain" />
+          </div>
+          
+          <!-- Element 4 - Bottom Right -->
+          <div class="absolute bottom-20 right-3 md:top-[400px] md:right-8 w-16 h-16 md:w-24 md:h-24 float-bubble" data-parallax-element>
+            <img src="assets/images/bottom right.png" alt="Floating element" class="w-full h-full object-contain" />
+          </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+          <h1 data-animate="hero" class="mb-6 md:mb-8 text-[2.8em] md:text-[6em]  font-black text-neutral-900">
+           Get cashback Wherever you spend money
+          </h1>
+          
+          <p data-animate="hero" class="mb-8 md:mb-10 text-lg md:text-xl text-neutral-700 max-w-2xl mx-auto">
+            Simbi Props streamlines property management with intelligent tools designed for modern real estate professionals.
+          </p>
+
+          <div data-animate="hero" class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="btn-primary text-base md:text-lg px-8 py-4">
+              Start Free Trial
+            </button>
+            <button class="btn-secondary text-base md:text-lg px-8 py-4">
+              Watch Demo
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Image Placeholder -->
+        <div class="mt-16 md:mt-20 lg:mt-24 relative z-10" style="perspective: 1200px;">
+          <div class="flex items-center justify-center gap-4 md:gap-8 lg:gap-12 perspective">
+            <!-- Left iPhone 15 Image -->
+            <div class="w-28 md:w-40 lg:w-48 transform-gpu bg-transparent" data-scroll-close-image="left">
+              <img 
+                src="assets/images/iphone-left.png" 
+                alt="Simbi Props Dashboard on iPhone" 
+                class="w-full h-auto shadow-2xl rounded-3xl bg-transparent"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Right iPhone 15 Image -->
+            <div class="w-28 md:w-40 lg:w-48 transform-gpu bg-transparent" data-scroll-close-image="right">
+              <img 
+                src="assets/images/iphone-right.png" 
+                alt="Simbi Props Analytics on iPhone" 
+                class="w-full h-auto shadow-2xl rounded-3xl bg-transparent"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Slider Section -->
+    <section id="benefits" class="bg-white">
+      <div class="section-padding">
+        <div class="container-max">
+          <div class="text-center mb-1 md:mb-1 animate__animated animate__slideInUp" data-animate="slide-up">
+            <h4 class="mb-4 text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900">
+             One App to Save Cashback <br/> and Track Your Spending
+            </h4>
+            
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <!-- Benefits Carousel - Full Width -->
+      <div class="w-full overflow-hidden md:-mt-12">
+        <div class="relative px-4 md:pl-1 lg:px-1it">
+          <div class="overflow-x-auto scrollbar-hide">
+            <div data-benefits-slider class="flex transition-transform duration-500 ease-out gap-6 pb-4">
+              <!-- Slide 1 -->
+              <div class="w-full md:w-[calc(58%-12px)] lg:w-[calc(45%-16px)] flex-shrink-0 animate__animated animate__slideInUp" data-animate="slide-up">
+                <div class="bg-[#e2faff] rounded-2xl p-14 flex flex-col md:flex-row gap-8 items-center h-full shadow-sm border border-neutral-100 relative" style="min-height: 456px;">
+                  <div class="w-56 h-72 md:w-64 md:h-80 flex-shrink-0 rounded-xl flex items-center justify-center text-6xl">
+                    <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685d427f359d58565f29ad13_SP_Web1_SnapReceipts2.gif" alt="Snap Receipts" class="w-full h-80 object-cover" loading="lazy" />
+
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-2">Save 10+ Hours Weekly</h3>
+                    <p class="text-neutral-600 mb-4">Automate routine tasks and focus on growing your portfolio instead of managing paperwork.</p>
+                    <button class="px-6 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors">Learn More</button>
+                  </div>
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d48_Benefit-Spiral-Shape.svg" loading="lazy" alt="" class="absolute bottom-0 right-0 w-24 h-24 opacity-50" aria-hidden="true">
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="w-full md:w-[calc(58%-12px)] lg:w-[calc(45%-16px)] flex-shrink-0 animate__animated animate__slideInUp" data-animate="slide-up" style="animation-delay: 100ms;">
+                <div class="bg-[#fff6e4] rounded-2xl p-14 flex flex-col md:flex-row gap-8 items-center h-full shadow-sm border border-neutral-100 relative" style="min-height: 456px;">
+                  <div class="w-56 h-72 md:w-64 md:h-80 flex-shrink-0 rounded-xl flex items-center justify-center text-6xl">
+                    <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685ef6603681e71778654ebd_SP_Web1_Magnify-SpedUp.gif" alt="Track Spending" class="w-full h-80 object-cover" loading="lazy" />
+                    
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-2">Increase Revenue by 25%</h3>
+                    <p class="text-neutral-600 mb-4">Optimize rent collection, reduce vacancies, and maximize property performance with data-driven insights.</p>
+                    <button class="px-6 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors">Learn More</button>
+                  </div>
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d48_Benefit-Spiral-Shape.svg" loading="lazy" alt="" class="absolute bottom-0 right-0 w-24 h-24 opacity-50" aria-hidden="true">
+                </div>
+              </div>
+              <!-- Slide 3 -->
+              <div class="w-full md:w-[calc(58%-12px)] lg:w-[calc(45%-16px)] flex-shrink-0 animate__animated animate__slideInUp" data-animate="slide-up" style="animation-delay: 200ms;">
+                <div class="bg-[#fae6ff] rounded-2xl p-14 flex flex-col md:flex-row gap-8 items-center h-full shadow-sm border border-neutral-100 relative" style="min-height: 456px;">
+                  <div class="w-56 h-72 md:w-64 md:h-80 flex-shrink-0 rounded-xl flex items-center justify-center text-6xl">
+                    <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685d42cb3c2a330fffbd5c36_SP_Web1_Savings%20(1).gif" alt="Check Price" class="w-full h-80 object-cover" loading="lazy" />
+                    
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-2">Scale Effortlessly</h3>
+                    <p class="text-neutral-600 mb-4">Manage 10 properties or 1,000 with the same ease. Our platform grows with your business.</p>
+                    <button class="px-6 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors">Learn More</button>
+                  </div>
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d48_Benefit-Spiral-Shape.svg" loading="lazy" alt="" class="absolute bottom-0 right-0 w-24 h-24 opacity-50" aria-hidden="true">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="flex justify-center gap-4 mt-8 pb-8">
+            <button data-slider-prev class="p-1 rounded-full h-10 w-10 bg-neutral-100 hover:bg-neutral-200 transition-colors">
+              <span class="text-xl">‹</span>
+            </button>
+            <div class="flex gap-2 items-center">
+              <button data-slider-dot="0" class="h-1.5 bg-primary-600 transition-all rounded-sm" style="width: 56px;"></button>
+              <button data-slider-dot="1" class="h-1.5 bg-neutral-300 hover:bg-neutral-400 transition-all rounded-sm" style="width: 56px;"></button>
+              <button data-slider-dot="2" class="h-1.5 bg-neutral-300 hover:bg-neutral-400 transition-all rounded-sm" style="width: 56px;"></button>
+            </div>
+            <button data-slider-next class="p-1 rounded-full h-10 w-10 bg-neutral-100 hover:bg-neutral-200 transition-colors">
+              <span class="text-xl">›</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-padding bg-white">
+      <div class="container-max">
+        <!-- Title -->
+        <div class="text-center mb-16 md:mb-20 animate__animated animate__slideInUp" data-animate="slide-up">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900">
+            Save Cashback on Things You <br/> Buy and at Places You Spend Money
+          </h2>
+        </div>
+
+        <!-- Big Feature (Before You Buy) -->
+        <div class="mb-7 animate__animated animate__slideInUp bg-[#f8fafc] rounded-3xl pl-16 pt-9" data-animate="slide-up">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <!-- Content -->
+            <div class="animate__animated animate__slideInUp" data-animate="slide-up">
+              <div class="mb-20 flex">
+                 <div class="inline-flex items-center gap-3 mb-4 p-3  h-12 w-12 bg-[#0094ff] rounded-full">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d10_Feature-Tag-Icon-1.svg" alt="" class="w-5 h-7" loading="lazy" />
+                
+                </div>
+
+                <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-[#0094ff] rounded-full">
+                
+                  <span class="text-white font-semibold">Before You Buy</span>
+                </div>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-neutral-900 mb-3">Get the Latest Price of Things Around Your Neighbourhood</h3>
+              <p class="text-neutral-600 text-base md:text-lg">Compare prices in your neighborhood, discover the best deals, and avoid overpaying all before you spend a kobo.</p>
+            </div>
+            <!-- Image -->
+            <div class="flex items-center justify-center animate__animated animate__zoomIn" data-animate="scale-up">
+              <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/6852bfbb192ea8d12a52ba0f_Check%20Price%20Illustration.png" alt="Check Price" class="w-full max-w-[31.5rem] rotate" loading="lazy" style=" rotate: -19deg;" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Features Grid (When You Buy & After You Buy) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8">
+          <!-- When You Buy -->
+          <div class="bg-neutral-50 rounded-3xl p-8 md:p-10 animate__animated animate__slideInUp" data-animate="slide-up">
+            <div class="mb-10 mt-[1.5rem] flex">
+                 <div class="inline-flex items-center gap-3 mb-4 p-3  h-12 w-12 bg-[#7b1cfa] rounded-full">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d0e_Feature-Tag-Icon-2.svg" alt="" class="w-7 h-7" loading="lazy" />
+                
+                </div>
+
+                <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-[#7b1cfa] rounded-full">
+                
+                  <span class="text-white font-semibold">When You Buy</span>
+                </div>
+              </div>
+            <div class="mb-6">
+              <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/6852dc61e1e8249a52376e08_at-purchase-illustrations.png" alt="" class="w-full" loading="lazy" />
+            </div>
+            <h4 class="text-xl md:text-2xl font-bold text-neutral-900 mb-3">Get Cashback When You Pay Everyday Bills and More</h4>
+            <p class="text-neutral-600">Unlock hidden cashback rewards when you shop and pay for the things you already spend money on automatically using the Simbi props Rewards app.</p>
+          </div>
+
+          <!-- After You Buy -->
+          <div class="bg-neutral-50 rounded-3xl p-8 md:p-10 relative animate__animated animate__slideInUp" data-animate="slide-up" style="animation-delay: 100ms;">
+           <div class="mb-5 mt-[1.5rem] flex">
+                 <div class="inline-flex items-center gap-3 mb-4 p-3  h-12 w-12 bg-[#efbf04] rounded-full">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d0f_Feature-Tag-Icon-3.svg" alt="" class="w-7 h-7" loading="lazy" />
+                
+                </div>
+
+                <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-[#efbf04] rounded-full">
+                
+                  <span class="text-white font-semibold">After You Buy</span>
+                </div>
+              </div>
+            <div class="mb-6 flex justify-center">
+              <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685d43293bc6ef13ea8182de_SP_Web1_SnapReceipts1.gif" alt="" class=" w-48md:w-[30rem] h-auto" loading="lazy" />
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-neutral-900 mb-3 ">Track Spending and Save Cashback with Just a Snap</h3>
+            <p class="text-neutral-600">When you pay, shop, or snap receipts for offers through Simbi props App, every receipt = potential reward. We collect cashback from brands and give you a slice.</p>
+            <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d19_Feature-Bg-Shape-2.svg" alt="" class="absolute bottom-0 right-0 w-32 h-32 opacity-30" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Savings/Rewards Section -->
+    <section class="section-padding">
+      <div class="container-max">
+        <!-- Title -->
+        <div class="text-center mb-16 md:mb-20 animate__animated animate__slideInUp" data-animate="slide-up">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold max-w-2xl text-center text-neutral-900 mx-auto mb-10">
+            Simbi props Rewards Wherever Your Spending Takes You
+          </h2>
+          <p class="text-lg md:text-xl text-neutral-600 mt-6">Built with 💜 to make everyday spending rewarding.</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-end md:items-start">
+          <!-- Stat 1: Simbi props Network -->
+          <div class="single-saving-card-wrap mt-100 _1 animate__animated animate__slideInUp md:mt-24" data-animate="slide-up" style="background-color: #ecc5fe; background-image: url(https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cd0_Saving-Card-BG.svg); background-position: 50% 0; background-size: cover; border-radius: 16px; padding: 30px 36px; box-shadow: 0 5px 12px 3px rgba(0,0,0,0.05);">
+            <div class="savings-content-wrap">
+              <div class="savings-title-flex flex items-start justify-between gap-4">
+                <div class="saving-name-wrap flex-1">
+                  <h5 class="text-xl md:text-2xl font-bold text-neutral-900">Simbi props Network</h5>
+                  <div class="text-sm md:text-base text-neutral-600">Brands that collab with us</div>
+                </div>
+                <div class="saving-card-icon-wrap-2 _1 flex-shrink-0">
+                  <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cd2_Saving-Icon-1.svg" alt="" class="w-6 h-6 md:w-6 md:h-6" />
+                </div>
+              </div>
+              <div class="savings-summery-content flex items-end justify-between gap-4 mt-12">
+                <div></div>
+                <div class="flex flex-col items-end">
+                  <div class="summery-counter-wrap text-5xl md:text-6xl font-bold text-neutral-900">
+                    <span data-counter="20000">0</span>+
+                  </div>
+                  <div class="savings-summery-details text-sm md:text-base text-neutral-600">Online and offline stores</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat 2: Cashback Redeemed -->
+          <div class="single-saving-card-wrap _2 animate__animated animate__slideInUp" data-animate="slide-up" style="background-color: #b5e0ff; background-image: url(https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cd0_Saving-Card-BG.svg); background-position: 50% 0; background-size: cover; border-radius: 16px; padding: 30px 36px; box-shadow: 0 5px 12px 3px rgba(0,0,0,0.05); animation-delay: 100ms;">
+            <div class="savings-content-wrap">
+              <div class="savings-title-flex flex items-start justify-between gap-4">
+                <div class="saving-name-wrap flex-1">
+                  <h5 class="text-xl md:text-2xl font-bold text-neutral-900">Cashback Redeemed</h5>
+                  <div class="text-sm md:text-base text-neutral-600">The money back to users</div>
+                </div>
+                <div class="saving-card-icon-wrap-2 _2 flex-shrink-0">
+                  <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cd1_Saving-Icon-2.svg" alt="" class="w-6 h-6 md:w-6 md:h-6" />
+                </div>
+              </div>
+              <div class="savings-summery-content flex items-end justify-between gap-4 mt-12">
+                <div></div>
+                <div class="flex flex-col items-end">
+                  <div class="summery-counter-wrap text-5xl md:text-6xl font-bold text-neutral-900">
+                    <span data-counter="645">0</span>M+
+                  </div>
+                  <div class="savings-summery-details text-sm md:text-base text-neutral-600">Cashback Point</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat 3: Active Members -->
+          <div class="single-saving-card-wrap mt-100 _3 animate__animated animate__slideInUp md:mt-24" data-animate="slide-up" style="background-color: #f3d86e; background-image: url(https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cd0_Saving-Card-BG.svg); background-position: 50% 0; background-size: cover; border-radius: 16px; padding: 30px 36px; box-shadow: 0 5px 12px 3px rgba(0,0,0,0.05); animation-delay: 200ms;">
+            <div class="savings-content-wrap">
+              <div class="savings-title-flex flex items-start justify-between gap-4">
+                <div class="saving-name-wrap flex-1">
+                  <h5 class="text-xl md:text-2xl font-bold text-neutral-900">Active Members</h5>
+                  <div class="text-sm md:text-base text-neutral-600">Across Online and Offline Stores</div>
+                </div>
+                <div class="saving-card-icon-wrap-2 _3 flex-shrink-0">
+                  <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cd3_Saving-Icon-3.svg" alt="" class="w-6 h-6 md:w-6 md:h-6" />
+                </div>
+              </div>
+              <div class="savings-summery-content flex items-end justify-between gap-4 mt-12">
+                <div></div>
+                <div class="flex flex-col items-end">
+                  <div class="summery-counter-wrap text-5xl md:text-6xl font-bold text-neutral-900">
+                    <span data-counter="130">0</span>K+
+                  </div>
+                  <div class="savings-summery-details text-sm md:text-base text-neutral-600">Nationwide</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="section-padding bg-white">
+      <div class="container-max">
+        <!-- Title -->
+        <div class="text-center mb-16 md:mb-20 animate__animated animate__slideInUp" data-animate="slide-up">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">Getting Started</h2>
+          <div class="flex justify-center mb-1">
+          <div class="section-title-shape tab-center -mt-[2.5rem]" data-w-id="4816dd0f-b460-e30d-f468-19ea30112755" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/68306e3309948195e69e5b72/68306e3309948195e69e5c83_Line%20(2).json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="2.9"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 410 60" width="410" height="60" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"><defs><clipPath id="__lottie_element_38"><rect width="410" height="60" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#__lottie_element_38)"><g transform="matrix(1,0,0,1,205,30)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(240,215,255)" stroke-opacity="1" stroke-width="5" d=" M-188.875,17.875 C-188.875,17.875 -97.56999969482422,-16.180999755859375 2,-19.5 C17,-20 6.513999938964844,-7.460999965667725 -48,11.5 C-59.5,15.5 -51,15.5 25.5,7 C102,-1.5 160.5,1 184.5,4.5"></path></g></g></g></svg></div>
+          </div>
+        </div>
+
+        <!-- Steps Container - Centered and Reduced Width -->
+        <div class="space-y-12 md:space-y-0 helps-container  animate__animated animate__slideInUp">
+          <!-- Step 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center" >
+            <div class="help-img-wrapper animate__animated animate__slideInLeft">
+              <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/6856faa4c11bac6293359c7e_shoppoint-dashboard-sm.png" alt="Download Simbi props App" class="w-full" loading="lazy" />
+            </div>
+            <div class="animate__animated animate__slideInRight">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 rounded-full bg-primary-600 text-white flex items-center justify-center text-lg font-bold">1</div>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-neutral-900 mb-2">Download Simbi props App for Everyday Spending Rewards</h3>
+              <p class="text-neutral-600 text-sm md:text-base">Browse rewards, check price and discount vouchers before you buy.</p>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="helps-divider-border-wrap animate__animated animate__slideInLeft" style="width: 100%; ">
+            <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cd7_Help-Border-1.svg" loading="lazy" alt="" class="helps-divider-border w-full md:h-[11rem]">
+          </div>
+
+          <!-- Step 2 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-16 md:mb-24 animate__animated animate__slideInRight" >
+            <div class="order-2 md:order-1 animate__animated animate__slideInLeft">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 rounded-full bg-primary-600 text-white flex items-center justify-center text-lg font-bold">2</div>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-neutral-900 mb-2">Shop, Pay Anywhere and Snap Your Receipts</h3>
+              <p class="text-neutral-600 text-sm md:text-base">Whether online or in-store, use e-payment and snap your receipt after checkout.</p>
+            </div>
+            <div class="order-1 md:order-2 animate__animated animate__slideInRight help-img-wrapper">
+              <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/6856fad64b0cc9c2992e672d_shoppoint-snapped-sm.png" alt="Snap Receipts" class="w-full" loading="lazy" />
+            </div>
+          </div>
+
+            <!-- Divider -->
+          <div class="helps-divider-border-wrap" style="width: 100%; ">
+            <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cd8_Help-Border-2.svg" loading="lazy" alt="" class="helps-divider-border w-full md:h-[12rem]">
+          </div>
+
+
+          <!-- Step 3 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center "  style="animation-delay: 200ms;">
+            <div class="help-img-wrapper animate__animated animate__slideInLeft">
+              <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/6856fb014ca124d51586239d_shoppoint-rewarded-sm.png" alt="Redeem Cashback" class="w-full" loading="lazy" />
+            </div>
+            <div class="animate__animated animate__slideInRight">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 rounded-full bg-primary-600 text-white flex items-center justify-center text-lg font-bold">3</div>
+              </div>
+              <h3 class="text-lg md:text-xl font-bold text-neutral-900 mb-2">Stack and Redeem Cashback Points Instantly</h3>
+              <p class="text-neutral-600 text-sm md:text-base">Redeem cashback, get exclusive offers, and unlock more savings the more you shop.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stores/Lifestyle Section -->
+    <section class="section-padding bg-[#f6f7f9] rounded-3xl md:rounded-4xl mx-4 md:mx-0">
+      <div class="container-max">
+        <!-- Title -->
+        <div class="text-center mb-16 md:mb-20 animate__animated animate__slideInUp">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900">
+            Make Everyday Rewards Your Lifestyle With Simbi props App
+          </h2>
+        </div>
+
+        <!-- Video and Logos Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+          <!-- YouTube Video -->
+          <div class="animate__animated animate__slideInUp" >
+            <div class="relative w-full" style="padding-bottom: 56.25%;">
+              <iframe 
+                src="https://www.youtube.com/embed/cSs8XooXOsc?rel=0&controls=1&autoplay=0&mute=0&start=0" 
+                frameborder="0" 
+                style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen="" 
+                title="Wherever Your Spending Takes You, Simbi props Rewards"
+                class="rounded-2xl"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Store Logos Grid -->
+          <div class="animate__animated animate__slideInUp" data-animate="slide-up" style="animation-delay: 100ms;">
+            <div class="grid grid-cols-3 gap-4 items-start">
+              <!-- Left Column -->
+              <div class="space-y-4">
+                <div class="bg-white single-store-logo-wrap small rounded-3xl p-4 flex items-center justify-center ">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/6833388cea21a80a4e145149_Supermarket-rewards.png" alt="Supermarket" class="store-logo" loading="lazy" />
+                </div>
+                <div class="bg-white rounded-3xl p-4 flex items-center justify-center single-store-logo-wrap long">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/683338e765afc6358c86deb6_Restaurants-Rewards.png" alt="Restaurants" class="store-logo" loading="lazy" />
+                 
+                </div>
+              </div>
+
+              <!-- Middle Column (Staggered Down) -->
+              <div class="space-y-4 md:pt-2">
+                <div class="bg-white single-store-logo-wrap long rounded-3xl p-4 flex items-center justify-center min-h-[]">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/683338b800a751fea411f494_Phamarcy-Rewards.png" alt="Pharmacy" class="store-logo" loading="lazy" />
+                </div>
+                <div class="bg-white single-store-logo-wrap small rounded-3xl p-4 flex items-center justify-center min-h-32">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/683339002de35f796c381808_fashion-rewards.png" alt="Fashion" class="store-logo" loading="lazy" />
+                 
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div class="space-y-4">
+                <div class="bg-white single-store-logo-wrap small rounded-3xl p-4 flex items-center justify-center min-h-32">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/683338d29fe12a68375f9039_Local-Market-Rewards.png" alt="Local Market" class="store-logo" loading="lazy" />
+                
+                </div>
+                <div class="bg-white  single-store-logo-wrap long rounded-3xl p-4 flex items-center justify-center min-h-32">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/6833391ecf8336021d6b3497_electricity-rewards.png" alt="Electricity" class="store-logo" loading="lazy" />
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-white">
+      <div class="container-max">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+          <!-- Left Content -->
+          <div class="animate__animated animate__slideInUp" data-animate="slide-up">
+            <div class="mb-12">
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
+                Why Shoppers Love Simbi props App
+              </h2>
+           
+             <div class="section-title-shape testimonial -mt-[3.6rem] md:w-[500px]" data-w-id="eef73649-7046-2f2d-d4dc-24d3eae8c073" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4e01_Line%20(1).json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="2.9"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 410 60" width="410" height="60" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"><defs><clipPath id="__lottie_element_50"><rect width="410" height="60" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#__lottie_element_50)"><g transform="matrix(1,0,0,1,205,30)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(163,143,251)" stroke-opacity="1" stroke-width="5" d=" M-188.875,17.875 C-188.875,17.875 -97.56999969482422,-16.180999755859375 2,-19.5 C17,-20 6.513999938964844,-7.460999965667725 -48,11.5 C-59.5,15.5 -51,15.5 25.5,7 C102,-1.5 160.5,1 184.5,4.5"></path></g></g></g></svg></div>
+            </div>
+            
+            <!-- User Stats -->
+            <div class="flex items-center gap-6">
+              <div class="flex -space-x-3">
+                <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685a9f27eb0b5eaef7ddbb51_shoppoint-engage-userml.png" alt="User" class="w-10 h-10 rounded-full border-2 border-white" loading="lazy" />
+                <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685a9f003cd0f4aa7e187c35_shoppoint-engage-userlady3.png" alt="User" class="w-10 h-10 rounded-full border-2 border-white" loading="lazy" />
+                <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685a9f6aa361b8c199f2902c_shoppoint-engage-userldblk.png" alt="User" class="w-10 h-10 rounded-full border-2 border-white" loading="lazy" />
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-neutral-900">100K+</h4>
+                <p class="text-neutral-600">Trusted by thousands <br> of <b>Snapstars</b> nationwide</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Testimonials -->
+          <div class="testimonial-bg-wrapper" style="background-image: url(https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d28_Testimonial-Bg.jpg); background-position: 50% 0; background-repeat: no-repeat; background-size: cover; border-radius: 24px; width: 100%; max-width: 636px; padding: 48px 40px; overflow: hidden;">
+            <div class="testimonial-reviews-flex space-y-6">
+              <!-- Testimonial 1 -->
+              <div class="single-testimonial-wrap left animate__animated animate__slideInUp" data-animate="testimonial" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                <div class="testimonial-details-wrap">
+                  <p class="testimonial-details text-neutral-700 mb-6 text-lg">
+                    I never used to keep track of how much I was spending until Simbi props. Now I earn cashback on things I was already buying, and I've saved over ₦18,000 in three months. The best part? It feels like a reward for just living my normal life.
+                  </p>
+                </div>
+                <div class="testimonial-author-wrap flex items-center gap-4">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685a9f6aa361b8c199f2902c_shoppoint-engage-userldblk.png" loading="lazy" alt="Chidera A." class="testimonial-author-img w-12 h-12 rounded-full" />
+                  <div class="testimonial-author-info-wrap">
+                    <div class="testimonial-author-name font-semibold text-neutral-900">Chidera A.</div>
+                    <div class="testimonial-author-designation text-sm text-neutral-600">Lagos</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div class="single-testimonial-wrap right animate__animated animate__slideInUp" data-animate="testimonial" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; animation-delay: 100ms;">
+                <div class="testimonial-details-wrap _2">
+                  <p class="testimonial-details text-neutral-700 mb-6 text-lg">
+                    Every time I snap my receipt, I get rewarded. I didn't realize how much I was leaving on the table before this. Simbi props makes spending feel smart. I've told all my friends and now we compete for who saves the most.
+                  </p>
+                </div>
+                <div class="testimonial-author-wrap right flex items-center gap-4">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685a9f27eb0b5eaef7ddbb51_shoppoint-engage-userml.png" loading="lazy" alt="Michael K." class="testimonial-author-img w-12 h-12 rounded-full" />
+                  <div class="testimonial-author-info-wrap">
+                    <div class="testimonial-author-name font-semibold text-neutral-900">Michael K.</div>
+                    <div class="testimonial-author-designation text-sm text-neutral-600">Abuja</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 3 -->
+              <div class="single-testimonial-wrap left animate__animated animate__slideInUp" data-animate="testimonial" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; animation-delay: 200ms;">
+                <div class="testimonial-details-wrap">
+                  <p class="testimonial-details text-neutral-700 mb-6 text-lg">
+                    It's not some foreign app that doesn't understand my spending. It knows the shops in my area, shows real cashback offers, and helps me budget better too. It's like a personal finance assistant and a savings genie in one app.
+                  </p>
+                </div>
+                <div class="testimonial-author-wrap flex items-center gap-4">
+                  <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/685a9f003cd0f4aa7e187c35_shoppoint-engage-userlady3.png" loading="lazy" alt="Toyin E." class="testimonial-author-img w-12 h-12 rounded-full" />
+                  <div class="testimonial-author-info-wrap">
+                    <div class="testimonial-author-name font-semibold text-neutral-900">Toyin E.</div>
+                    <div class="testimonial-author-designation text-sm text-neutral-600">Ibadan</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- FAQ Section -->
+    <section id="faq" class="section faq  ">
+      <div class="container-faq container">
+        <div class="faq-wrapper">
+          <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4dfa_Faq-Line-Left.svg" loading="lazy" alt="" class="faq-line-left h-[70%]">
+          <img src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4df9_Faq-Line-Right.svg" loading="lazy" alt="" class="faq-line-right">
+          
+          <div class="faq-container">
+            <div class="section-title-wrapper mb-100">
+              <div class="section-title-wrap faq">
+                <h2 class="section-title-2 white _2">Frequently Asked Questions</h2>
+                <div class="section-title-shape tab-center -mt-[2.5rem]" data-w-id="4816dd0f-b460-e30d-f468-19ea30112755" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/68306e3309948195e69e5b72/68306e3309948195e69e5c83_Line%20(2).json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="2.9"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 410 60" width="410" height="60" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"><defs><clipPath id="__lottie_element_38"><rect width="410" height="60" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#__lottie_element_38)"><g transform="matrix(1,0,0,1,205,30)" opacity="1" style="display: block;"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path stroke-linecap="round" stroke-linejoin="round" fill-opacity="0" stroke="rgb(240,215,255)" stroke-opacity="1" stroke-width="5" d=" M-188.875,17.875 C-188.875,17.875 -97.56999969482422,-16.180999755859375 2,-19.5 C17,-20 6.513999938964844,-7.460999965667725 -48,11.5 C-59.5,15.5 -51,15.5 25.5,7 C102,-1.5 160.5,1 184.5,4.5"></path></g></g></g></svg></div>
+              </div>
+            </div>
+
+            <div class="faq-flex-wrap-2">
+              <!-- FAQ Item 1 -->
+              <div class="single-faq-wrap-2 w-dropdown">
+                <div class="faq-question-wrap-2 w-dropdown-toggle" role="button" tabindex="0" aria-expanded="false">
+                  <div class="faq-question-flex-wrap-2">
+                    <div class="faq-question-2" style="color: rgb(255, 255, 255);">How does Simbi props App work?</div>
+                    <div class="faq-icon-wrap">
+                      <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cf2_Faq-Arrow.svg" alt="" class="faq-arrow">
+                    </div>
+                  </div>
+                </div>
+                <nav class="faq-ans-wrapper-2 w-dropdown-list">
+                  <div class="faq-ans-wrap-2">
+                    <p class="faq-answer-2">You shop. You snap. We track, match, and reward.<br><br>After every purchase, snap your receipt in the app. We track your expenses, scan your items for brand and retailer deals, and give you cashback points when you're eligible.<br><br>You can also check prices, compare across stores, and plan smarter purchases to unlock rewards even before you spend.<br><br>📊 From spending to saving, we've got your back.</p>
+                  </div>
+                </nav>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="single-faq-wrap-2 w-dropdown">
+                <div class="faq-question-wrap-2 w-dropdown-toggle" role="button" tabindex="0" aria-expanded="false">
+                  <div class="faq-question-flex-wrap-2">
+                    <div class="faq-question-2" style="color: rgb(255, 255, 255);">Is Simbi props App really free to use?</div>
+                    <div class="faq-icon-wrap">
+                      <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cf2_Faq-Arrow.svg" alt="" class="faq-arrow">
+                    </div>
+                  </div>
+                </div>
+                <nav class="faq-ans-wrapper-2 w-dropdown-list">
+                  <div class="faq-ans-wrap-2">
+                    <p class="faq-answer-2">Yes — you can start earning for free, no strings attached.<br>Snap receipts, earn points, and redeem them for airtime, data, and power. No fees required.<br><br>Want more? Join Shopper Club to unlock 3x rewards, exclusive missions, and premium cashback deals.<br><br>🚀 Free to start. Powerful when you upgrade.</p>
+                  </div>
+                </nav>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="single-faq-wrap-2 w-dropdown">
+                <div class="faq-question-wrap-2 w-dropdown-toggle" role="button" tabindex="0" aria-expanded="false">
+                  <div class="faq-question-flex-wrap-2">
+                    <div class="faq-question-2" style="color: rgb(255, 255, 255);">What kind of purchases or receipts qualify?</div>
+                    <div class="faq-icon-wrap">
+                      <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cf2_Faq-Arrow.svg" alt="" class="faq-arrow">
+                    </div>
+                  </div>
+                </div>
+                <nav class="faq-ans-wrapper-2 w-dropdown-list">
+                  <div class="faq-ans-wrap-2">
+                    <p class="faq-answer-2">Most everyday purchases are eligible. From groceries to fuel, restaurant meals to market runs as long as you have a valid, non-handwritten, readable paper receipt, you're good to go.</p>
+                  </div>
+                </nav>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="single-faq-wrap-2 w-dropdown">
+                <div class="faq-question-wrap-2 w-dropdown-toggle" role="button" tabindex="0" aria-expanded="false">
+                  <div class="faq-question-flex-wrap-2">
+                    <div class="faq-question-2" style="color: rgb(255, 255, 255);">What can I do with my points?</div>
+                    <div class="faq-icon-wrap">
+                      <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cf2_Faq-Arrow.svg" alt="" class="faq-arrow">
+                    </div>
+                  </div>
+                </div>
+                <nav class="faq-ans-wrapper-2 w-dropdown-list">
+                  <div class="faq-ans-wrap-2">
+                    <p class="faq-answer-2">Use your points to pay everyday bills no stress.<br>Redeem for airtime, data bundles, and electricity units from major providers.<br><br>You can even send points to friends or use them to unlock exclusive cashback boosters.<br><br>💡 Your receipts are literally helping you cover the cost of staying connected, powered, and online.</p>
+                  </div>
+                </nav>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="single-faq-wrap-2 w-dropdown">
+                <div class="faq-question-wrap-2 w-dropdown-toggle" role="button" tabindex="0" aria-expanded="false">
+                  <div class="faq-question-flex-wrap-2">
+                    <div class="faq-question-2" style="color: rgb(255, 255, 255);">Is this legit? What about my data?</div>
+                    <div class="faq-icon-wrap">
+                      <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cf2_Faq-Arrow.svg" alt="" class="faq-arrow">
+                    </div>
+                  </div>
+                </div>
+                <nav class="faq-ans-wrapper-2 w-dropdown-list">
+                  <div class="faq-ans-wrap-2">
+                    <p class="faq-answer-2">Yes — and we get it. You should ask.<br><br>We only use your receipts to help you earn points and track spending. We don't sell or misuse your info — ever.<br><br>🔐 If it's not safe for you, it's not good for us.</p>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog">
+      <div class="container-faq">
+        <div class="section-title-wrapper mb-100">
+          <div class="section-title-wrap blog">
+            <h2 class="section-title">Our Point of View</h2>
+          </div>
+        </div>
+
+        <div class="blog-collection-list-wrapper">
+          <div class="blog-collection">
+            <div class="blog-grid-wrap home-page">
+              <!-- Blog Post 1 -->
+              <div class="single-blog-wrap">
+                <div class="blog-contents-wrap">
+                  <a href="#" class="blog-img-wrap">
+                    <img src="https://cdn.prod.website-files.com/682f553f31a49c15f49f4cb0/68ee6180c28c8b85283bac71_iStock-1341411347.jpg" loading="lazy" alt="How Simbi props Helps Restaurants Win Loyal Diners" class="blog-img home-page">
+                  </a>
+                  <div class="blog-details-wrap">
+                    <div class="blog-info-wrap">
+                      <div class="blog-cat-wrap">
+                        <div class="blog-category">🤝 For Partners</div>
+                      </div>
+                      <div class="blog-date-wrap">
+                        <div class="blog-date">Oct 14, 2025</div>
+                      </div>
+                    </div>
+                    <a href="#" class="blog-post-title-wrap">
+                      <h6 class="blog-post-title">How Simbi props Helps Restaurants Win Loyal Diners</h6>
+                    </a>
+                    <p class="blog-post-details">Discover how Simbi props rewards help restaurants build lasting customer loyalty.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Blog Post 2 -->
+              <div class="single-blog-wrap">
+                <div class="blog-contents-wrap">
+                  <a href="#" class="blog-img-wrap">
+                    <img src="https://cdn.prod.website-files.com/682f553f31a49c15f49f4cb0/68a22dff89e3d0f08c8605c5_ChatGPT%20Image%20Aug%2017%2C%202025%2C%2008_28_40%20PM.png" loading="lazy" alt="Why Cashback Isn't Just a Perk" class="blog-img home-page">
+                  </a>
+                  <div class="blog-details-wrap">
+                    <div class="blog-info-wrap">
+                      <div class="blog-cat-wrap">
+                        <div class="blog-category">💡 Point of View</div>
+                      </div>
+                      <div class="blog-date-wrap">
+                        <div class="blog-date">Aug 18, 2025</div>
+                      </div>
+                    </div>
+                    <a href="#" class="blog-post-title-wrap">
+                      <h6 class="blog-post-title">Why Cashback Isn't Just a Perk, It's a Lifestyle</h6>
+                    </a>
+                    <p class="blog-post-details">Cashback is more than rewards, it's a smarter way of living and spending every day.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-button-wrapper ">
+          <a href="#" class="primary-button rounded-full">
+            <div class="primary-button-flex purple ">
+              <div class="primary-button-text-wrap rounded-full">
+                <div class="primary-button-text">View All</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-flex-wrap">
+          <!-- Left Content -->
+          <div class="split-content">
+            <div class="cta-content-wrapper">
+              <div class="section-title-wrapper mb-60">
+                <div class="section-title-wrap cta">
+                  <h2 class="section-title">Get the Simbi props App for Everyday Spending Rewards</h2>
+                </div>
+              </div>
+              <p class="cta-details">Simply link your favorite stores, shop as usual, and watch your cash back pile up. It's that easy!</p>
+              <div class="cta-button-wrapper">
+                <a href="https://getshoppoint.com/download" target="_blank" class="">
+                  <div class="primary-button-flex-app gray-bordered">
+                    <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cf5_Cta-Btn-Icon-1.svg" alt="Apple" class="cta-btn-icon">
+                    <div class=" ml-1">Download Now</div>
+                  </div>
+                </a>
+                <a href="https://getshoppoint.com/download" target="_blank" class="">
+                  <div class="primary-button-flex-app gray-bordered">
+                    <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cf4_Cta-Btn-Icon-2.svg" alt="Google Play" class="cta-btn-icon">
+                    <div class="primary-button-text mt-1">Download Now</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content - Image -->
+          <div class="split-content">
+            <div class="cta-image-wrapper">
+              <img loading="lazy" src="https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/6841869410c5aaf852da1ac6_shoppoint-rewards-all.png" alt="Simbi props App" class="cta-mobile">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <!-- Footer -->
+  <footer class="footer-wrapper px-24 md:px-44 lg:px-56">
+    <div class="contaier">
+      <div class="footer-top-wrap">
+        <div class="footer-top-container">
+          <div class="footer-top-flex-wrap">
+            <!-- Left Section - Logo & Details -->
+            <div class="footer-details-wrapper">
+              <div class="footer-logo-wrap">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <span class="text-black font-bold text-lg">S</span>
+                  </div>
+                  <span class="text-lg font-bold text-white">Simbi Props</span>
+                </div>
+              </div>
+              <p class="footer-details">Modern property management platform for real estate professionals.</p>
+            </div>
+
+            <!-- Right Section - Links & Social -->
+            <div class="footer-links-content-wrap">
+              <div class="footer-links-flex-wrapper">
+                <!-- Get Simbi props Links -->
+                <div class="footer-links-single-row">
+                  <h6 class="footer-links-title">Product</h6>
+                  <div class="footer-links-flex">
+                    <a href="#" class="footer-link">Features</a>
+                    <a href="#" class="footer-link">Pricing</a>
+                    <a href="#" class="footer-link">Security</a>
+                  </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links-single-row">
+                  <h6 class="footer-links-title">Quick Links</h6>
+                  <div class="footer-links-flex">
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Simbi Props FAQ</a>
+                    <a href="#" class="footer-link">Blog</a>
+                  </div>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="footer-links-single-row">
+                  <h6 class="footer-links-title">Legal</h6>
+                  <div class="footer-links-flex">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Compliance</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Links -->
+              <div class="footer-social-link-wrapper">
+                <div class="footer-social-link-text">Connect on Social</div>
+                <div class="footer-social-links-flex">
+                  <a href="https://web.facebook.com/people/Shoppoint-Rewards/61577328725087" target="_blank" class="single-social-link">
+                    <span>f</span>
+                  </a>
+                  <a href="https://www.instagram.com/getshoppoint" target="_blank" class="single-social-link">
+                    <span>📷</span>
+                  </a>
+                  <a href="https://x.com/getshoppoint" target="_blank" class="single-social-link">
+                    <span>𝕏</span>
+                  </a>
+                  <a href="https://www.linkedin.com/company/getshoppoint" target="_blank" class="single-social-link">
+                    <span>in</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom-wrapper">
+        <div class="footer-copyright-text">© 2025 Copyright - <a href="#" class="copyright-link">Simbi Props</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
