@@ -313,15 +313,15 @@ class App {
         let isActive = false;
         
         // Check for faqs page first (most specific)
-        if ((href === '/faqs' || href === 'faqs.html')) {
+        if (href === 'faqs.html') {
           isActive = currentPath.includes('faqs') || currentFile.includes('faqs.html');
         }
         // Check for about page
-        else if ((href === '/about' || href === 'about.html')) {
+        else if (href === 'about.html') {
           isActive = currentPath.includes('about') || currentFile.includes('about.html');
         }
         // Check for home page (least specific - only if not about or faqs)
-        else if ((href === '/' || href === 'index.html')) {
+        else if (href === 'index.html') {
           isActive = !currentPath.includes('about') && !currentPath.includes('faqs') && 
                      !currentFile.includes('about.html') && !currentFile.includes('faqs.html');
         }
