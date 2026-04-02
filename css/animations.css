@@ -1479,20 +1479,47 @@ img {
     gap: 16px; 
     padding-left: 10px;
     padding-right: 10px;
+    flex-direction: column;
   }
 
-
-
-  .single-benefit-wrapper.in-features {
-    padding-left: 24px;
-    padding-right: 24px;
-    position: relative;
-    top: auto;
+  .single-benefit-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    position: relative !important;
+    top: auto !important;
   }
 
   .benefit-grid-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     grid-template-columns: 1fr;
-    gap: 24px;
+  }
+
+  .benefit-image-wrapper {
+    order: -1;
+    width: 100%;
+    max-height: 100px;
+    overflow: hidden;
+    object-fit: contain;
+  }
+
+  .benefit-image-wrapper img {
+    max-width: 100px;
+    height: auto;
+    max-height: 100px;
+    object-fit: cover;
+  }
+
+  .benefit-content-wrapper {
+    order: 1;
+    width: 100%;
+  }
+
+  .benefit-spiral {
+    display: none !important;
   }
 
   .benefit-title {
