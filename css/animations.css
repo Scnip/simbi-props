@@ -554,7 +554,7 @@
 }
 
 .single-faq-wrap-2 {
-  background-color: #a38ffb;
+  background-color: #B07C0A;
   border-radius: 12px;
   overflow: hidden;
   transition: all 300ms ease-out;
@@ -1502,4 +1502,23 @@ img {
   .benefit-details {
     font-size: 0.9375rem;
   }
+}
+
+
+/* Active Navigation Link Styling */
+[data-nav-link].text-neutral-900 {
+  color: rgb(23, 23, 23);
+  font-weight: 600;
+  position: relative;
+}
+
+[data-nav-link].text-neutral-900::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-500, #f7b914);
+  border-radius: 1px;
 }

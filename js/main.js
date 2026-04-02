@@ -24,6 +24,7 @@ class App {
     this.initBenefitsSlider();
     this.initAnimatedCounters();
     this.initParallaxElements();
+    this.initActiveNav();
     console.log('✅ App initialized successfully');
   }
 
@@ -295,6 +296,52 @@ class App {
 
     // Initial call
     updatePhoneAnimation();
+  }
+
+  /**
+   * Initialize active navigation highlighting
+   */
+  initActiveNav() {
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    
+    const updateActiveNav = () => {
+      const currentPath = window.location.pathname;
+      const currentFile = window.location.href;
+      
+      navLinks.forEach((link) => {
+        const href = link.getAttribute('href');
+        let isActive = false;
+        
+        // Check for faqs page first (most specific)
+        if ((href === '/faqs' || href === 'faqs.html')) {
+          isActive = currentPath.includes('faqs') || currentFile.includes('faqs.html');
+        }
+        // Check for about page
+        else if ((href === '/about' || href === 'about.html')) {
+          isActive = currentPath.includes('about') || currentFile.includes('about.html');
+        }
+        // Check for home page (least specific - only if not about or faqs)
+        else if ((href === '/' || href === 'index.html')) {
+          isActive = !currentPath.includes('about') && !currentPath.includes('faqs') && 
+                     !currentFile.includes('about.html') && !currentFile.includes('faqs.html');
+        }
+        
+        // Update active state
+        if (isActive) {
+          link.classList.add('text-neutral-900', 'font-semibold');
+          link.classList.remove('text-neutral-600');
+        } else {
+          link.classList.remove('text-neutral-900', 'font-semibold');
+          link.classList.add('text-neutral-600');
+        }
+      });
+    };
+    
+    // Run on page load
+    updateActiveNav();
+    
+    // Also run on hash change in case of SPA navigation
+    window.addEventListener('hashchange', updateActiveNav);
   }
 
   /**
