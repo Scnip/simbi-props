@@ -911,7 +911,7 @@
 
 /* CTA Section Styling */
 .section.cta {
-  padding: 0px 0px;
+  padding: 120px 0px 0px;
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -1110,6 +1110,10 @@
     padding-bottom: 120px;
 }
 @media (max-width: 768px) {
+  .section {
+    padding-top: 30px;
+    padding-bottom: 120px;
+}
   .footer-top-wrap {
   background-color: #000000;
   border-radius: 0px;
@@ -1340,7 +1344,7 @@
 .single-benefit-wrapper {
   z-index: 1;
   background-color: #dbffe7;
-  background-image: url(https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4d4b_Benefit-BG-Cage.svg);
+  background-image: url('https://cdn.prod.website-files.com/682f553e31a49c15f49f4c12/682f553f31a49c15f49f4cf1_Faq-BG-Border.png');
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1472,7 +1476,9 @@ img {
 
 @media (max-width: 768px) {
   .benefits-flex-wrapper {
-    gap: 32px;
+    gap: 16px; 
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 
